@@ -5,13 +5,16 @@ class entity
 private:
     int m_x, m_y;
     int * m;
+    mutable int var;  // editable
 
 public:
     int get_x() const // signifies that we cannot modify any of actuall class member variables
     {
+        var++; // could be edited 
         //  m_x = 10;// invalid
         return m_x;
     }
+
     int set_x(){
 
         m_x = 10;
@@ -79,6 +82,9 @@ int main()
     *r = 2; // valid
 
     // r = (int *) &a; // in valid
+
+ 
+
 
     return 0;
 }
